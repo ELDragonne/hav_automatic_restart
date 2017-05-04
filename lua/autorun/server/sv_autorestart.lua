@@ -1,5 +1,5 @@
 -- PARTIE CONFIG --
-local MapName = "rp_rockford_v3b" -- Map du serveur
+local MapName = "rp_jedivssith" -- Map du serveur
 local RestartTime = "06:00" -- Heures du reboot
 local WarningsReboot = { -- Messages d'avertissement du reboot
 	"60", -- 60 Minutes
@@ -30,10 +30,10 @@ function Hav_AutoRestart:CheckDay()
 				local WarningsTime = Timestamp - (60 * 60 * -(v/60))
 				local WarningsTime = (os.date("%H:%M", WarningsTime))
 				if tonumber(v) > 1 then PlurielS = "s" else PlurielS = "" end
-				if RestartTime == WarningsTime then BroadcastLua("chat.AddText(Color(255,60,60), '[Auto Restart] ', Color(255,255,255), 'Le serveur redémarre dans " .. v .. " Minute" .. PlurielS .. ", préparez-vous!' )") warningsdelay = CurTime() + 60 end
+				if RestartTime == WarningsTime then BroadcastLua("chat.AddText(Color(255,60,60), '[Redemarrage du Serveur] ', Color(255,255,255), 'Le serveur redémarre dans " .. v .. " Minute" .. PlurielS .. ", préparez-vous!' )") warningsdelay = CurTime() + 60 end
 			end
 		end
-		
+
 		if CurTime() >= restartdelay then
 			if TimeString == RestartTime then
 				if file.Exists("data/ulx/config.txt", "GAME") then
